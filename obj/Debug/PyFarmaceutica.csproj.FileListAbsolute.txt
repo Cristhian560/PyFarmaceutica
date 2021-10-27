@@ -76,3 +76,5 @@ C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.pdb
 C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.FormPrincipal.resources
 C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.Presentacion.FormTotalFacturacion.resources
 C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.Presentacion.FormSuministro.resources
+C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.Presentacion.FormSuministrodeprueba.resources
+C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.Presentacion.FormFactura.resources

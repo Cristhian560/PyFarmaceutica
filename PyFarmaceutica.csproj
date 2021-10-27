@@ -155,17 +155,29 @@
     <Compile Include="Presentacion\FormPrincipal.designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\FormSuministro.cs">
+    <Compile Include="Presentacion\FormSuministrodeprueba.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FormSuministro.Designer.cs">
-      <DependentUpon>FormSuministro.cs</DependentUpon>
+    <Compile Include="Presentacion\FormSuministrodeprueba.Designer.cs">
+      <DependentUpon>FormSuministrodeprueba.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FormTotalFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\FormTotalFacturacion.Designer.cs">
       <DependentUpon>FormTotalFacturacion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FormFactura.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FormFactura.designer.cs">
+      <DependentUpon>FormFactura.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FormSuministro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FormSuministro.designer.cs">
+      <DependentUpon>FormSuministro.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\InicioSesion.cs">
       <SubType>Form</SubType>
@@ -180,11 +192,17 @@
     <EmbeddedResource Include="Presentacion\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\FormSuministro.resx">
-      <DependentUpon>FormSuministro.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\FormSuministrodeprueba.resx">
+      <DependentUpon>FormSuministrodeprueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FormTotalFacturacion.resx">
       <DependentUpon>FormTotalFacturacion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FormFactura.resx">
+      <DependentUpon>FormFactura.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FormSuministro.resx">
+      <DependentUpon>FormSuministro.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\InicioSesion.resx">
       <DependentUpon>InicioSesion.cs</DependentUpon>

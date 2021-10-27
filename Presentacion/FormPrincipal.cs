@@ -67,8 +67,8 @@ namespace PyFarmaceutica
         private void btnSuministros_Click(object sender, EventArgs e)
         {
             HideSubMenu();
-            Form formSoporte = new FormSuministro();
-            AbrirForm(formSoporte);
+            Form form_suministros = new FormSuministro();
+            AbrirForm(form_suministros);
         }
         private void Editar_Click(object sender, EventArgs e)
         {

@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace PyFarmaceutica.Presentacion
 {
-    public partial class FormSuministro : Form
+    public partial class FormFactura : Form
     {
-        public FormSuministro()
+        public FormFactura()
         {
             InitializeComponent();
         }
