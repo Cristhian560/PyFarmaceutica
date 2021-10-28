@@ -1,4 +1,5 @@
 ﻿using PyFarmaceutica.acceso_a_datos.interfaces;
+using PyFarmaceutica.dominio;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -18,6 +19,108 @@ namespace PyFarmaceutica.acceso_a_datos.implementaciones
             CadenaConexion = HelperDao.Instancia().CadenaConeccion();
             cnn = new SqlConnection(CadenaConexion);
         }
+        public bool Update(Suministro suministro)
+        {
+            SqlTransaction transaccion = null;
+            bool flag = true;
+            try
+            {
+                cnn.Open();
+                transaccion = cnn.BeginTransaction();
+
+                SqlCommand cmd = new SqlCommand("SP_UPDATE_SUMINISTRO", cnn, transaccion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_suministro",suministro.IdSuministro);
+                cmd.Parameters.AddWithValue("@suministro", suministro.Nombre);
+                cmd.Parameters.AddWithValue("@venta_libre", suministro.VentaLibre);
+                cmd.Parameters.AddWithValue("@id_tipo_suministro", suministro.TipoSuministro.IdTipoSuministro);
+                cmd.Parameters.AddWithValue("@pre_unitario", suministro.Precio);
+                cmd.Parameters.AddWithValue("@descripcion", suministro.Descripcion);
+
+                cmd.ExecuteNonQuery();
+
+                transaccion.Commit();
+            }
+            catch
+            {
+                transaccion.Rollback();
+                flag = false;
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+            }
+            return flag;
+        }
+
+        public bool Delete(int id)
+        {
+            SqlTransaction transaccion = null;
+            bool flag = true;
+            try
+            {
+                cnn.Open();
+                transaccion = cnn.BeginTransaction();
+
+                SqlCommand cmd = new SqlCommand("SP_DELETE_SUMINISTRO", cnn, transaccion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_suministro", id);
+
+                cmd.ExecuteNonQuery();
+
+                transaccion.Commit();
+            }
+            catch
+            {
+                transaccion.Rollback();
+                flag = false;
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+            }
+            return flag;
+        }
+
+        public bool Insert(Suministro suministro)
+        {
+            SqlTransaction transaccion = null;
+            bool flag = true;
+            try
+            {
+                cnn.Open();
+                transaccion = cnn.BeginTransaction();
+
+                SqlCommand cmd = new SqlCommand("SP_INSERTAR_SUMINISTRO", cnn, transaccion);
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@id_suministro", suministro.IdSuministro);
+                cmd.Parameters.AddWithValue("@suministro", suministro.Nombre);
+                cmd.Parameters.AddWithValue("@venta_libre", suministro.VentaLibre);
+                cmd.Parameters.AddWithValue("@id_tipo_suministro", suministro.TipoSuministro.IdTipoSuministro);
+                cmd.Parameters.AddWithValue("@precio", suministro.Precio);
+                cmd.Parameters.AddWithValue("@descripcion", suministro.Descripcion);
+
+                cmd.ExecuteNonQuery();
+
+                transaccion.Commit();
+            }
+            catch
+            {
+                transaccion.Rollback();
+                flag = false;
+            }
+            finally
+            {
+                if (cnn != null && cnn.State == ConnectionState.Open)
+                    cnn.Close();
+            }
+            return flag;
+        }
         public DataTable Suministros()
         {
             SqlCommand cmd = new SqlCommand("SP_CONSULTAR_SUMINISTROS",cnn);
@@ -25,6 +128,20 @@ namespace PyFarmaceutica.acceso_a_datos.implementaciones
 
             DataTable tabla = new DataTable();
             
+            cnn.Open();
+            tabla.Load(cmd.ExecuteReader());
+            cnn.Close();
+
+            return tabla;
+        }
+
+        public DataTable TiposSuministros()
+        {
+            SqlCommand cmd = new SqlCommand("SP_CONSULTAR_TIPOS_SUMINISTRO",cnn);
+            cmd.CommandType = CommandType.StoredProcedure;
+
+            DataTable tabla = new DataTable();
+
             cnn.Open();
             tabla.Load(cmd.ExecuteReader());
             cnn.Close();

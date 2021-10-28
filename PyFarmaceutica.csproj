@@ -149,6 +149,7 @@
     <Compile Include="acceso a datos\implementaciones\SuministroDao.cs" />
     <Compile Include="acceso a datos\interfaces\ISuministroDao.cs" />
     <Compile Include="dominio\Suministro.cs" />
+    <Compile Include="dominio\TipoSuministro.cs" />
     <Compile Include="Presentacion\FormPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>

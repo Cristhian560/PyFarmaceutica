@@ -11,8 +11,9 @@ namespace PyFarmaceutica.dominio
         public int IdSuministro { get; set; }
         public string Nombre { get; set; }
         public string VentaLibre { get; set; }
-        public int IdTipoSuministro { get; set; }
+        public TipoSuministro TipoSuministro { get; set; }
         public double Precio { get; set; }
         public string Descripcion { get; set; }
+       
     }
 }

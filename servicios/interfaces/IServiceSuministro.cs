@@ -10,5 +10,9 @@ namespace PyFarmaceutica.servicios.interfaces
     public interface IServiceSuministro
     {
         List<Suministro> Suministros();
+        List<TipoSuministro> TipoSuministros();
+        bool Insert(Suministro suministro);
+        bool Delete(int id);
+        bool Update(Suministro suministro);
     }
 }
