@@ -156,12 +156,6 @@
     <Compile Include="Presentacion\FormPrincipal.designer.cs">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\FormSuministrodeprueba.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\FormSuministrodeprueba.Designer.cs">
-      <DependentUpon>FormSuministrodeprueba.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\FormTotalFacturacion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -192,9 +186,6 @@
     <Compile Include="servicios\interfaces\IServiceSuministro.cs" />
     <EmbeddedResource Include="Presentacion\FormPrincipal.resx">
       <DependentUpon>FormPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\FormSuministrodeprueba.resx">
-      <DependentUpon>FormSuministrodeprueba.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FormTotalFacturacion.resx">
       <DependentUpon>FormTotalFacturacion.cs</DependentUpon>

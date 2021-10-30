@@ -30,6 +30,7 @@ namespace PyFarmaceutica.Presentacion
         private void FormSuministro_Load(object sender, EventArgs e)
         {
             CargarGrilla();
+            rbtYes.Checked = true;
             btnGuardarCambios.Enabled = false;
             btnCancelar.Enabled = false;
             cboTipo.DataSource = serviceSuministro.TipoSuministros();
@@ -44,11 +45,35 @@ namespace PyFarmaceutica.Presentacion
                 dgvSuministros.Rows.Remove(dgvSuministros.CurrentRow);
             }
         }
+        private void btnGuardarCambios_Click(object sender, EventArgs e)
+        {
+            if (ComprobarCampos(txtPrecio.Text))
+            {
+                dgvSuministros.Enabled = true;
+                if (serviceSuministro.Update(ConstruirObjeto()))
+                {
+                    MessageBox.Show("LOS CAMBIOS HAN SIDO GUARDADOS");
+                }
+                else
+                {
+                    MessageBox.Show("ERROR AL GUARDAR CAMBIOS");
+                }
+                dgvSuministros.Rows.Clear();
+                CargarlistaDB();
+                CargarGrilla();
+                Habilitar(true);
+                LimpiarCampos();
+            }
+            else
+            {
+                MessageBox.Show("EL CAMPO PRECIO NO PUEDE ESTAR VACIO");
+            }
+        }
         private void btnAgregar_Click(object sender, EventArgs e)
         {
-            if (!ComprobarCampos())
+            if (!ComprobarCampos(txtCodigo.Text)||!ComprobarCampos(txtPrecio.Text))
             {
-                MessageBox.Show("CAMPO VACIO");
+                MessageBox.Show("EL CAMPO CODIGO O PRECIO NO PUEDE ESTAR VACIO!!");
             }
             else
             {
@@ -62,15 +87,23 @@ namespace PyFarmaceutica.Presentacion
                 }
 
                 lista_suministros.Add(ConstruirObjeto());
-                serviceSuministro.Insert(ConstruirObjeto());
+                if(serviceSuministro.Insert(ConstruirObjeto()))
+                {
+                    MessageBox.Show("EL SUMINISTRO SE AGREGO CORRECTAMENTE");
+                }
+                else
+                {
+                    MessageBox.Show("ERROR AL AGRAGAR SUMINISTRO");
+                }
                 CargarlistaDB();
                 CargarGrilla();
+                LimpiarCampos();
             }
         }
 
-        private bool ComprobarCampos()
+        private bool ComprobarCampos(string campo)
         {
-            if(txtCodigo.Text != "")
+            if(!(campo == ""))
             {
                 return true;
             }
@@ -101,19 +134,18 @@ namespace PyFarmaceutica.Presentacion
         private void EditarFila()
         {
             txtCodigo.Text = Convert.ToInt32(dgvSuministros.CurrentRow.Cells[0].Value).ToString();
-            txtCodigo.Enabled = false;
-            dgvSuministros.Enabled = false;
-            btnGuardarCambios.Enabled = true;
-            btnAgregar.Enabled = false;
-            btnCancelar.Enabled = true;
+            Habilitar(false);
         }
 
         private void BorrarFila()
         {
-            serviceSuministro.Delete(Convert.ToInt32(dgvSuministros.CurrentRow.Cells[0].Value));
-            dgvSuministros.Rows.Clear();
-            CargarlistaDB();
-            CargarGrilla();
+            if (MessageBox.Show("BORRAR EL SUMINISTRO : "+ dgvSuministros.CurrentRow.Cells[1].Value.ToString()+" ?", "ELIMINAR", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2) == DialogResult.Yes)
+            {
+                serviceSuministro.Delete(Convert.ToInt32(dgvSuministros.CurrentRow.Cells[0].Value));
+                dgvSuministros.Rows.Clear();
+                CargarlistaDB();
+                CargarGrilla();
+            }
         }
         private Suministro ConstruirObjeto()
         {
@@ -141,19 +173,76 @@ namespace PyFarmaceutica.Presentacion
 
             return suministro;
         }
-
-        private void btnGuardarCambios_Click(object sender, EventArgs e)
+        
+        private void LimpiarCampos()
         {
-            dgvSuministros.Enabled = true;
-            serviceSuministro.Update(ConstruirObjeto());
-            dgvSuministros.Rows.Clear();
-            CargarlistaDB();
-            CargarGrilla();
+            txtCodigo.Text = "";
+            txtSuministro.Text = "";
+            txtPrecio.Text = "";
+            txtDescripcion.Text = "";
+        }
+        private void Habilitar(bool x)
+        {
+            txtCodigo.Enabled = x;
+            dgvSuministros.Enabled = x;
+            btnGuardarCambios.Enabled = !x;
+            btnAgregar.Enabled = x;
+            btnCancelar.Enabled = !x;
+        }
+
+        private void txtCodigo_TextChanged(object sender, EventArgs e)
+        {
+            if (X(txtCodigo.Text))
+            {
+                
+            }
+            else
+            {
+                MessageBox.Show("CODIGO INCORRECTO");
+                txtCodigo.Text = "";
+            }
+        }
+        private void txtPrecio_TextChanged(object sender, EventArgs e)
+        {
+            if (X(txtPrecio.Text))
+            {
+
+            }
+            else
+            {
+                MessageBox.Show("PRECIO INCORRECTO");
+                txtPrecio.Text = "";
+            }
+        }
+
+        private bool X(string campo)
+        {
+            bool b = false;
+            if (campo!="")
+            {
+                for (int i = 0; i < campo.Length; i++)
+                {
+                    if (Char.IsDigit(campo, i))
+                    {
+                        b = true;
+                    }
+                    else
+                    {
+                        b = false;
+                    }
+                }
+            }
+            else
+            {
+                b = true;
+            }
+            return b;
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-
+            Habilitar(true);
+            LimpiarCampos();
         }
     }
 }
