@@ -13,7 +13,7 @@ namespace PyFarmaceutica
         private string CadenaConexion;
         private HelperDao()
         {
-            CadenaConexion = @"Data Source=DESKTOP-AOE3FOR\SQLEXPRESS;Initial Catalog = db_farmaceutica;Integrated Security=True";
+            CadenaConexion = @"Data Source=DESKTOP-AOE3FOR\SQLEXPRESS;Initial Catalog = db_farmaceutica2;Integrated Security=True";
         }
         public static HelperDao Instancia()
         {

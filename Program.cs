@@ -1,4 +1,5 @@
 ﻿using PyFarmaceutica.Presentacion;
+using PyFarmaceutica.Reportes.FormReportes;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace PyFarmaceutica
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormSuministro());
+            Application.Run(new FormLogin());
         }
     }
 }

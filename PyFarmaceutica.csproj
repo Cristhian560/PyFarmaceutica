@@ -132,6 +132,24 @@
     <Reference Include="Bunifu.UI.WinForms.Deprecated, Version=5.0.9.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9, processorArchitecture=MSIL">
       <HintPath>packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.UI.WinForms.Deprecated.dll</HintPath>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1484.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -146,21 +164,28 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="acceso a datos\HelperDao.cs" />
+    <Compile Include="acceso a datos\implementaciones\ClienteDao.cs" />
+    <Compile Include="acceso a datos\implementaciones\FacturaDao.cs" />
+    <Compile Include="acceso a datos\implementaciones\LoginSignUpDao.cs" />
+    <Compile Include="acceso a datos\implementaciones\ReporteDao.cs" />
     <Compile Include="acceso a datos\implementaciones\SuministroDao.cs" />
+    <Compile Include="acceso a datos\interfaces\IClienteDao.cs" />
+    <Compile Include="acceso a datos\interfaces\IFacturaDao.cs" />
+    <Compile Include="acceso a datos\interfaces\ILoginSignUpDao.cs" />
+    <Compile Include="acceso a datos\interfaces\IReporteDao.cs" />
     <Compile Include="acceso a datos\interfaces\ISuministroDao.cs" />
+    <Compile Include="dominio\Cliente.cs" />
+    <Compile Include="dominio\DetalleFactura.cs" />
+    <Compile Include="dominio\Factura.cs" />
+    <Compile Include="dominio\Login_SignUp\Empleado.cs" />
+    <Compile Include="dominio\Login_SignUp\Login.cs" />
     <Compile Include="dominio\Suministro.cs" />
     <Compile Include="dominio\TipoSuministro.cs" />
-    <Compile Include="Presentacion\FormPrincipal.cs">
+    <Compile Include="Presentacion\FormAcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\FormPrincipal.designer.cs">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Presentacion\FormTotalFacturacion.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\FormTotalFacturacion.Designer.cs">
-      <DependentUpon>FormTotalFacturacion.cs</DependentUpon>
+    <Compile Include="Presentacion\FormAcercaDe.Designer.cs">
+      <DependentUpon>FormAcercaDe.cs</DependentUpon>
     </Compile>
     <Compile Include="Presentacion\FormFactura.cs">
       <SubType>Form</SubType>
@@ -168,36 +193,84 @@
     <Compile Include="Presentacion\FormFactura.designer.cs">
       <DependentUpon>FormFactura.cs</DependentUpon>
     </Compile>
+    <Compile Include="Presentacion\FormPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FormPrincipal.designer.cs">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\FormStocksDisponible.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\FormStocksDisponible.Designer.cs">
+      <DependentUpon>FormStocksDisponible.cs</DependentUpon>
+    </Compile>
     <Compile Include="Presentacion\FormSuministro.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Presentacion\FormSuministro.designer.cs">
       <DependentUpon>FormSuministro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\InicioSesion.cs">
+    <Compile Include="Presentacion\Login-Sign Up\asa.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Presentacion\InicioSesion.Designer.cs">
-      <DependentUpon>InicioSesion.cs</DependentUpon>
+    <Compile Include="Presentacion\Login-Sign Up\asa.Designer.cs">
+      <DependentUpon>asa.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentacion\Login-Sign Up\Login.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentacion\Login-Sign Up\Login.Designer.cs">
+      <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reportes\entidades\Año.cs" />
+    <Compile Include="Reportes\entidades\ReporteCantidadVentas_Suministro.cs" />
+    <Compile Include="Reportes\FormReportes\FormReporteCantidadVentas_Suministro.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReportes\FormReporteCantidadVentas_Suministro.Designer.cs">
+      <DependentUpon>FormReporteCantidadVentas_Suministro.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\FormReportes\FormReporteFacturacionTotal_Mes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReportes\FormReporteFacturacionTotal_Mes.Designer.cs">
+      <DependentUpon>FormReporteFacturacionTotal_Mes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\entidades\ReporteFacturacionTotal_Mes.cs" />
+    <Compile Include="servicios\implementaciones\ServiceCliente.cs" />
+    <Compile Include="servicios\implementaciones\ServiceFactura.cs" />
+    <Compile Include="servicios\implementaciones\ServiceLoginSignUp.cs" />
+    <Compile Include="servicios\implementaciones\ServiceReporte.cs" />
     <Compile Include="servicios\implementaciones\ServiceSuministro.cs" />
+    <Compile Include="servicios\interfaces\IServiceCliente.cs" />
+    <Compile Include="servicios\interfaces\IServiceFactura.cs" />
+    <Compile Include="servicios\interfaces\IServiceLoginSignUp.cs" />
+    <Compile Include="servicios\interfaces\IServiceReporte.cs" />
     <Compile Include="servicios\interfaces\IServiceSuministro.cs" />
-    <EmbeddedResource Include="Presentacion\FormPrincipal.resx">
-      <DependentUpon>FormPrincipal.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\FormTotalFacturacion.resx">
-      <DependentUpon>FormTotalFacturacion.cs</DependentUpon>
+    <Compile Include="SqlServerTypes\Loader.cs" />
+    <EmbeddedResource Include="Presentacion\FormAcercaDe.resx">
+      <DependentUpon>FormAcercaDe.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FormFactura.resx">
       <DependentUpon>FormFactura.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FormPrincipal.resx">
+      <DependentUpon>FormPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\FormStocksDisponible.resx">
+      <DependentUpon>FormStocksDisponible.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FormSuministro.resx">
       <DependentUpon>FormSuministro.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\InicioSesion.resx">
-      <DependentUpon>InicioSesion.cs</DependentUpon>
+    <EmbeddedResource Include="Presentacion\Login-Sign Up\asa.resx">
+      <DependentUpon>asa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentacion\Login-Sign Up\Login.resx">
+      <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\licenses.licx" />
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -209,7 +282,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reportes\FormReportes\FormReporteCantidadVentas_Suministro.resx">
+      <DependentUpon>FormReporteCantidadVentas_Suministro.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReportes\FormReporteFacturacionTotal_Mes.resx">
+      <DependentUpon>FormReporteFacturacionTotal_Mes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReportes\Report2.rdlc" />
+    <EmbeddedResource Include="Reportes\FormReportes\ReporteCantidadVentas_Suministro.rdlc" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\PyFarmaceutica.Reportes.entidades.ReporteCantidadVentas_Suministro.datasource" />
+    <None Include="Properties\DataSources\PyFarmaceutica.Reportes.entidades.ReporteFacturacionTotal.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -222,6 +305,21 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
