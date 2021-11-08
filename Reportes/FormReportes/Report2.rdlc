@@ -420,7 +420,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Nro</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -453,7 +455,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Mes</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -486,7 +490,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Fecha</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -519,7 +525,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Nro Factura</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -552,7 +560,9 @@
                               <TextRuns>
                                 <TextRun>
                                   <Value>Total</Value>
-                                  <Style />
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -789,7 +799,7 @@
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>Detalles</Value>
+                    <Value>DETALLES</Value>
                     <Style>
                       <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
@@ -895,7 +905,7 @@
       <Width>18cm</Width>
       <Page>
         <PageHeader>
-          <Height>3.51253cm</Height>
+          <Height>3.5cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <ReportItems>
@@ -951,7 +961,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
               <Top>1.24064cm</Top>
-              <Left>6.19337cm</Left>
+              <Left>6.56645cm</Left>
               <Height>1.21384cm</Height>
               <Width>5.33633cm</Width>
               <ZIndex>1</ZIndex>
@@ -983,7 +993,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
               <Top>2.63087cm</Top>
-              <Left>4.22487cm</Left>
+              <Left>4.59795cm</Left>
               <Height>0.6cm</Height>
               <Width>6.45111cm</Width>
               <ZIndex>2</ZIndex>
@@ -999,7 +1009,7 @@
             </Textbox>
             <Line Name="Line1">
               <Top>3.26614cm</Top>
-              <Left>4.22487cm</Left>
+              <Left>4.59795cm</Left>
               <Height>0cm</Height>
               <Width>7.74108cm</Width>
               <ZIndex>3</ZIndex>
@@ -1028,7 +1038,7 @@
               </Paragraphs>
               <rd:DefaultName>Textbox15</rd:DefaultName>
               <Top>2.64103cm</Top>
-              <Left>10.71125cm</Left>
+              <Left>11.08433cm</Left>
               <Height>0.6cm</Height>
               <Width>1.2547cm</Width>
               <ZIndex>4</ZIndex>

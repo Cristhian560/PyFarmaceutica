@@ -43,7 +43,8 @@ namespace PyFarmaceutica.servicios.implementaciones
                 {
                     IdSuministro = Convert.ToInt32(item.ItemArray[0]),
                     Suministro= item.ItemArray[1].ToString(),
-                    Cantidad= Convert.ToInt32(item.ItemArray[2])
+                    Cantidad= Convert.ToInt32(item.ItemArray[2]),
+                    Monto = Convert.ToInt32(item.ItemArray[3])
                 };
                 Lista_obj_cantidad_ventas_suministro.Add(obj_cantidad_ventas_suministro);
             }

@@ -19,6 +19,12 @@ namespace PyFarmaceutica.servicios.implementaciones
         {
             loginSingUpDao = new LoginSignUpDao();
         }
+
+        public bool CrearUsuario(Login login)
+        {
+            return loginSingUpDao.RegistrarUsuario(login);
+        }
+
         public Empleado ValidarLogin(Login login)
         {
             var tabla = loginSingUpDao.ValidarLogin(login);
@@ -40,6 +46,20 @@ namespace PyFarmaceutica.servicios.implementaciones
                 }
             }
             return empleado;
+        }
+
+        public bool VerificarEmpleado(Empleado empleado)
+        {
+            var tabla = loginSingUpDao.VerificarEmpleado(empleado);
+
+            if (tabla.Rows.Count == 0)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
     }
 }

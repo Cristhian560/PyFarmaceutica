@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace PyFarmaceutica.dominio
 {
-    class Cliente
+    public class Cliente
     {
         public int Documento { get; set; }
         public string NombreCliente { get; set; }

@@ -50,7 +50,6 @@ namespace PyFarmaceutica
             this.btnTotalFacturacion = new System.Windows.Forms.Button();
             this.btnReportes = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.btnStocks = new System.Windows.Forms.Button();
             this.btnSuministros = new System.Windows.Forms.Button();
             this.btnSoporte = new System.Windows.Forms.Button();
             this.panelPrincipal = new System.Windows.Forms.Panel();
@@ -58,6 +57,7 @@ namespace PyFarmaceutica
             this.lblApellidoEmpleado = new System.Windows.Forms.Label();
             this.lblNombreEmpleado = new System.Windows.Forms.Label();
             this.bunifuPictureBox1 = new Bunifu.UI.WinForms.BunifuPictureBox();
+            this.btnStocks = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -300,12 +300,13 @@ namespace PyFarmaceutica
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.panel3.Controls.Add(this.btnStocks);
             this.panel3.Controls.Add(this.btnSunistrosVendidos);
             this.panel3.Controls.Add(this.btnTotalFacturacion);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 192);
+            this.panel3.Location = new System.Drawing.Point(0, 152);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(208, 80);
+            this.panel3.Size = new System.Drawing.Size(208, 120);
             this.panel3.TabIndex = 3;
             // 
             // btnSunistrosVendidos
@@ -347,7 +348,7 @@ namespace PyFarmaceutica
             this.btnReportes.ForeColor = System.Drawing.SystemColors.ButtonFace;
             this.btnReportes.Image = ((System.Drawing.Image)(resources.GetObject("btnReportes.Image")));
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 136);
+            this.btnReportes.Location = new System.Drawing.Point(0, 96);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(208, 56);
             this.btnReportes.TabIndex = 2;
@@ -358,27 +359,12 @@ namespace PyFarmaceutica
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
-            this.panel2.Controls.Add(this.btnStocks);
             this.panel2.Controls.Add(this.btnSuministros);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 56);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(208, 80);
+            this.panel2.Size = new System.Drawing.Size(208, 40);
             this.panel2.TabIndex = 1;
-            // 
-            // btnStocks
-            // 
-            this.btnStocks.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnStocks.FlatAppearance.BorderSize = 0;
-            this.btnStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStocks.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.btnStocks.Location = new System.Drawing.Point(0, 40);
-            this.btnStocks.Name = "btnStocks";
-            this.btnStocks.Size = new System.Drawing.Size(208, 40);
-            this.btnStocks.TabIndex = 1;
-            this.btnStocks.Text = "Stocks";
-            this.btnStocks.UseVisualStyleBackColor = true;
-            this.btnStocks.Click += new System.EventHandler(this.btnStocks_Click);
             // 
             // btnSuministros
             // 
@@ -471,6 +457,20 @@ namespace PyFarmaceutica
             this.bunifuPictureBox1.TabStop = false;
             this.bunifuPictureBox1.Type = Bunifu.UI.WinForms.BunifuPictureBox.Types.Circle;
             // 
+            // btnStocks
+            // 
+            this.btnStocks.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnStocks.FlatAppearance.BorderSize = 0;
+            this.btnStocks.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnStocks.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.btnStocks.Location = new System.Drawing.Point(0, 80);
+            this.btnStocks.Name = "btnStocks";
+            this.btnStocks.Size = new System.Drawing.Size(208, 40);
+            this.btnStocks.TabIndex = 3;
+            this.btnStocks.Text = "Stocks";
+            this.btnStocks.UseVisualStyleBackColor = true;
+            this.btnStocks.Click += new System.EventHandler(this.btnStocks_Click_1);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -504,7 +504,6 @@ namespace PyFarmaceutica
         private System.Windows.Forms.Button btnTotalFacturacion;
         private System.Windows.Forms.Button btnReportes;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button btnStocks;
         private System.Windows.Forms.Button btnSuministros;
         private System.Windows.Forms.Panel panelPrincipal;
         private System.Windows.Forms.Button btnSalirCerrarSecion;
@@ -526,5 +525,6 @@ namespace PyFarmaceutica
         private System.Windows.Forms.Button btnConsultas;
         private System.Windows.Forms.Button btnActualizarFactura;
         private System.Windows.Forms.Label lblApellidoEmpleado;
+        private System.Windows.Forms.Button btnStocks;
     }
 }

@@ -144,4 +144,26 @@
   <metadata name="ColumnaBorrar.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="txtFiltro.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAAUAAAAApCAYAAABEHPCMAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADBSURBVHhe7dRBDQQhAARB/KuCIONkrIDdkPA5DV2VzGcE
+        9ABI23v/5pyvmVlhp3k3f2OcA6DiNO/mTwCBFgEEsgQQyBJAIEsAgSwBBLIEEMgSQCBLAIEsAQSyBBDI
+        EkAgSwCBLAEEsgQQyBJAIEsAgSwBBLIEEMgSQCBLAIEsAQSyBBDIEkAgSwCBLAEEsgQQyBJAIEsAgSwB
+        BLIEEMgSQCBLAIEsAQSyBBDIEkAg6y+Aa63nHGZmhZ3m3fwBFI3xAbbiBPQ+7hKOAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="$this.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAATcAAAB/CAIAAAAFPBLQAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAS
+        dAAAEnQB3mYfeAAAAXZJREFUeF7t0zEBAAAMw6C5qH+ns5EDPHAD2iyFOkuhzlKosxTqLIU6S6HOUqiz
+        FOoshTpLoc5SqLMU6iyFOkuhzlKosxTqLIU6S6HOUqizFOoshTpLoc5SqLMU6iyFOkuhzlKosxTqLIU6
+        S6HOUqizFOoshTpLoc5SqLMU6iyFOkuhzlKosxTqLIU6S6HOUqizFOoshTpLoc5SqLMU6iyFOkuhzlKo
+        sxTqLIU6S6HOUqizFOoshTpLoc5SqLMU6iyFOkuhzlKosxTqLIU6S6HOUqizFOoshTpLoc5SqLMU6iyF
+        OkuhzlKosxTqLIU6S6HOUqizFOoshTpLoc5SqLMU6iyFOkuhzlKosxTqLIU6S6HOUqizFOoshTpLoc5S
+        qLMU6iyFOkuhzlKosxTqLIU6S6HOUqizFOoshTpLoc5SqLMU6iyFOkuhzlKosxTqLIU6S6HOUqizFOos
+        hTpLoc5SqLMU6iyFOkuhzlKosxTqLIU6S6Fte7HUmBX/nrVAAAAAAElFTkSuQmCC
+</value>
+  </data>
 </root>

@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu.Licensing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=f89b4760ba7dcb6b, processorArchitecture=MSIL">
       <HintPath>packages\Bunifu.UI.WinForms.5.0.9\lib\net40\Bunifu.Licensing.dll</HintPath>
@@ -168,11 +171,13 @@
     <Compile Include="acceso a datos\implementaciones\FacturaDao.cs" />
     <Compile Include="acceso a datos\implementaciones\LoginSignUpDao.cs" />
     <Compile Include="acceso a datos\implementaciones\ReporteDao.cs" />
+    <Compile Include="acceso a datos\implementaciones\ReporteStockDao.cs" />
     <Compile Include="acceso a datos\implementaciones\SuministroDao.cs" />
     <Compile Include="acceso a datos\interfaces\IClienteDao.cs" />
     <Compile Include="acceso a datos\interfaces\IFacturaDao.cs" />
     <Compile Include="acceso a datos\interfaces\ILoginSignUpDao.cs" />
     <Compile Include="acceso a datos\interfaces\IReporteDao.cs" />
+    <Compile Include="acceso a datos\interfaces\IReporteStockDao.cs" />
     <Compile Include="acceso a datos\interfaces\ISuministroDao.cs" />
     <Compile Include="dominio\Cliente.cs" />
     <Compile Include="dominio\DetalleFactura.cs" />
@@ -211,12 +216,6 @@
     <Compile Include="Presentacion\FormSuministro.designer.cs">
       <DependentUpon>FormSuministro.cs</DependentUpon>
     </Compile>
-    <Compile Include="Presentacion\Login-Sign Up\asa.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Presentacion\Login-Sign Up\asa.Designer.cs">
-      <DependentUpon>asa.cs</DependentUpon>
-    </Compile>
     <Compile Include="Presentacion\Login-Sign Up\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -227,6 +226,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reportes\entidades\Año.cs" />
     <Compile Include="Reportes\entidades\ReporteCantidadVentas_Suministro.cs" />
+    <Compile Include="Reportes\entidades\Stock.cs" />
     <Compile Include="Reportes\FormReportes\FormReporteCantidadVentas_Suministro.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -240,15 +240,23 @@
       <DependentUpon>FormReporteFacturacionTotal_Mes.cs</DependentUpon>
     </Compile>
     <Compile Include="Reportes\entidades\ReporteFacturacionTotal_Mes.cs" />
+    <Compile Include="Reportes\FormReportes\FormReporteStock.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReportes\FormReporteStock.Designer.cs">
+      <DependentUpon>FormReporteStock.cs</DependentUpon>
+    </Compile>
     <Compile Include="servicios\implementaciones\ServiceCliente.cs" />
     <Compile Include="servicios\implementaciones\ServiceFactura.cs" />
     <Compile Include="servicios\implementaciones\ServiceLoginSignUp.cs" />
     <Compile Include="servicios\implementaciones\ServiceReporte.cs" />
+    <Compile Include="servicios\implementaciones\ServiceReporteStock.cs" />
     <Compile Include="servicios\implementaciones\ServiceSuministro.cs" />
     <Compile Include="servicios\interfaces\IServiceCliente.cs" />
     <Compile Include="servicios\interfaces\IServiceFactura.cs" />
     <Compile Include="servicios\interfaces\IServiceLoginSignUp.cs" />
     <Compile Include="servicios\interfaces\IServiceReporte.cs" />
+    <Compile Include="servicios\interfaces\IServiceReporteStock.cs" />
     <Compile Include="servicios\interfaces\IServiceSuministro.cs" />
     <Compile Include="SqlServerTypes\Loader.cs" />
     <EmbeddedResource Include="Presentacion\FormAcercaDe.resx">
@@ -265,9 +273,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\FormSuministro.resx">
       <DependentUpon>FormSuministro.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Presentacion\Login-Sign Up\asa.resx">
-      <DependentUpon>asa.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Presentacion\Login-Sign Up\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -288,11 +293,17 @@
     <EmbeddedResource Include="Reportes\FormReportes\FormReporteFacturacionTotal_Mes.resx">
       <DependentUpon>FormReporteFacturacionTotal_Mes.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReportes\FormReporteStock.resx">
+      <DependentUpon>FormReporteStock.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\FormReportes\Report2.rdlc" />
     <EmbeddedResource Include="Reportes\FormReportes\ReporteCantidadVentas_Suministro.rdlc" />
+    <EmbeddedResource Include="Reportes\FormReportes\ReporteStock.rdlc" />
+    <None Include="app.manifest" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\PyFarmaceutica.Reportes.entidades.ReporteCantidadVentas_Suministro.datasource" />
-    <None Include="Properties\DataSources\PyFarmaceutica.Reportes.entidades.ReporteFacturacionTotal.datasource" />
+    <None Include="Properties\DataSources\PyFarmaceutica.Reportes.entidades.Stock.datasource" />
+    <None Include="Properties\DataSources\PyFarmaceutica.Reportes.FormReportes.FormReporteCantidadVentas_Suministro.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

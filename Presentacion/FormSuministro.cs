@@ -85,19 +85,19 @@ namespace PyFarmaceutica.Presentacion
                         return;
                     }
                 }
-
-                lista_suministros.Add(ConstruirObjeto());
-                if(serviceSuministro.Insert(ConstruirObjeto()))
+                var s = ConstruirObjeto();
+                lista_suministros.Add(s);
+                if(serviceSuministro.Insert(s))
                 {
                     MessageBox.Show("EL SUMINISTRO SE AGREGO CORRECTAMENTE");
+                    LimpiarCampos();
+                    CargarlistaDB();
+                    CargarGrilla();
                 }
                 else
                 {
                     MessageBox.Show("ERROR AL AGRAGAR SUMINISTRO");
                 }
-                CargarlistaDB();
-                CargarGrilla();
-                LimpiarCampos();
             }
         }
 
@@ -115,6 +115,7 @@ namespace PyFarmaceutica.Presentacion
 
         private void CargarGrilla()
         {
+            dgvSuministros.Rows.Clear();
             foreach (Suministro s in lista_suministros)
             {
                 dgvSuministros.Rows.Add(new object[] { s.IdSuministro, s.Nombre, s.TipoSuministro.IdTipoSuministro, s.TipoSuministro.NombreTipoSuministro, s.Descripcion, s.VentaLibre, s.Precio });
@@ -133,7 +134,18 @@ namespace PyFarmaceutica.Presentacion
         }
         private void EditarFila()
         {
-            txtCodigo.Text = Convert.ToInt32(dgvSuministros.CurrentRow.Cells[0].Value).ToString();
+            txtCodigo.Text = dgvSuministros.CurrentRow.Cells[0].Value.ToString();
+            txtSuministro.Text= dgvSuministros.CurrentRow.Cells[1].Value.ToString();
+            txtDescripcion.Text = dgvSuministros.CurrentRow.Cells[4].Value.ToString();
+            txtPrecio.Text = dgvSuministros.CurrentRow.Cells[6].Value.ToString();
+            if (dgvSuministros.CurrentRow.Cells[5].Value.ToString()=="S")
+            {
+                rbtYes.Checked = true;
+            }
+            else
+            {
+                rbtNo.Checked = true;
+            }
             Habilitar(false);
         }
 
@@ -243,6 +255,30 @@ namespace PyFarmaceutica.Presentacion
         {
             Habilitar(true);
             LimpiarCampos();
+        }
+        private void txtFiltro_TextChanged_1(object sender, EventArgs e)
+        {
+            if (txtFiltro.Text != "")
+            {
+                string h = txtFiltro.Text.ToLower();
+                dgvSuministros.Rows.Clear();
+                foreach (Suministro s in lista_suministros)
+                {
+                    bool x = s.Nombre.ToLower().Contains(h);
+                    if (x)
+                    {
+                        dgvSuministros.Rows.Add(new object[] { s.IdSuministro, s.Nombre, s.TipoSuministro.IdTipoSuministro, s.TipoSuministro.NombreTipoSuministro, s.Descripcion, s.VentaLibre, s.Precio });
+                    }
+                }
+            }
+            else
+            {
+                dgvSuministros.Rows.Clear();
+                foreach (Suministro s in lista_suministros)
+                {
+                    dgvSuministros.Rows.Add(new object[] { s.IdSuministro, s.Nombre, s.TipoSuministro.IdTipoSuministro, s.TipoSuministro.NombreTipoSuministro, s.Descripcion, s.VentaLibre, s.Precio });
+                }
+            }
         }
     }
 }

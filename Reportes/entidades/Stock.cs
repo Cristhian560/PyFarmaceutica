@@ -6,11 +6,13 @@ using System.Threading.Tasks;
 
 namespace PyFarmaceutica.Reportes.entidades
 {
-    public class ReporteCantidadVentas_Suministro
+    public class Stock
     {
+        public int IdStock { get; set; }
         public int IdSuministro { get; set; }
         public string Suministro { get; set; }
-        public int Cantidad { get; set; }
-        public int Monto { get; set; }
+        public string Descripcion { get; set; }
+        public int StockDisponible { get; set; }
+        public int StockMinimo { get; set; }
     }
 }

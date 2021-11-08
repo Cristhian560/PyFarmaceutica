@@ -44,6 +44,7 @@ namespace PyFarmaceutica.Reportes.FormReportes
             // 
             // reportViewer1
             // 
+            this.reportViewer1.BackColor = System.Drawing.Color.DimGray;
             this.reportViewer1.Dock = System.Windows.Forms.DockStyle.Right;
             this.reportViewer1.DocumentMapWidth = 1;
             this.reportViewer1.IsDocumentMapWidthFixed = true;

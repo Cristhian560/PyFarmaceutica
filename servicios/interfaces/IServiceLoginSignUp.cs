@@ -11,5 +11,7 @@ namespace PyFarmaceutica.servicios.interfaces
     public interface IServiceLoginSignUp
     {
         Empleado ValidarLogin(Login login);
+        bool VerificarEmpleado(Empleado empleado);
+        bool CrearUsuario(Login login);
     }
 }

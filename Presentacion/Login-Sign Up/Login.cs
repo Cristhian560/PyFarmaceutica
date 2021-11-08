@@ -71,6 +71,7 @@ namespace PyFarmaceutica
         private void InicioSesion_Load(object sender, EventArgs e)
         {
             btnIniciarSesion.Enabled = false;
+            btnRegistrar.Enabled = false;
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -102,13 +103,11 @@ namespace PyFarmaceutica
                 }
             }
         }
-
         private void LimpiarCampos(bool v)
         {
             txtUsuario.Text = "";
             txtContraseña.Text = "";
         }
-
         private void txtContraseña_TextChanged(object sender, EventArgs e)
         {
             if (SeguridadContraseña(txtContraseña.Text) && ComprobarUsuario())
@@ -126,7 +125,36 @@ namespace PyFarmaceutica
         }
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            X(true);
+            //falta verificaciones de los texBox
+            //falta verificar si el empleado que se quiere registrar ya esta registrado o no(verificar con el legajo en la tabla login_f)
+            try
+            {
+                Empleado empleado = new Empleado()
+                {
+                    Legajo = Convert.ToInt32(txtUsuarioR.Text),
+                    Nombre = txtNombre.Text,
+                    Apellido = txtApellido.Text,
+                    Email = txtCorreo.Text
+                };
+
+                if (serviceLoginSignUp.VerificarEmpleado(empleado))
+                {
+                    Login login = new Login()
+                    {
+                        Usuario = Convert.ToInt32(txtUsuarioR.Text),
+                        Contrasenia = txtContrasenia.Text
+                    };
+                    if (serviceLoginSignUp.CrearUsuario(login))
+                    {
+                        MessageBox.Show("REGISTRO EXITOSO !!");
+                    }
+                }
+                X(true);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Datos ingresados incorrectos");
+            }
         }
         private void X(bool v)
         {
@@ -138,6 +166,17 @@ namespace PyFarmaceutica
             else
             {
                 panelLogin.BackgroundColor = Color.FromArgb(64, 64, 64);
+            }
+        }
+        private void txtContrasenia_TextChanged(object sender, EventArgs e)
+        {
+            if (SeguridadContraseña(txtContrasenia.Text))
+            {
+                btnRegistrar.Enabled = true;
+            }
+            else
+            {
+                btnRegistrar.Enabled = false;
             }
         }
     }

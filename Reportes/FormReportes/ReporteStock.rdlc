@@ -7,26 +7,34 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>f93e11c8-1b45-4789-b9b1-e8902de2aa31</rd:DataSourceID>
+      <rd:DataSourceID>868be926-1493-4663-b625-2da369448eb6</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
-    <DataSet Name="DataSetCantidadVentas_Suministros">
+    <DataSet Name="DataSetStock">
       <Query>
         <DataSourceName>PyFarmaceuticaReportesentidades</DataSourceName>
         <CommandText>/* Local Query */</CommandText>
       </Query>
       <Fields>
-        <Field Name="Cantidad">
-          <DataField>Cantidad</DataField>
+        <Field Name="Descripcion">
+          <DataField>Descripcion</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
+        <Field Name="IdStock">
+          <DataField>IdStock</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="IdSuministro">
           <DataField>IdSuministro</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
-        <Field Name="Monto">
-          <DataField>Monto</DataField>
+        <Field Name="StockDisponible">
+          <DataField>StockDisponible</DataField>
+          <rd:TypeName>System.Int32</rd:TypeName>
+        </Field>
+        <Field Name="StockMinimo">
+          <DataField>StockMinimo</DataField>
           <rd:TypeName>System.Int32</rd:TypeName>
         </Field>
         <Field Name="Suministro">
@@ -36,8 +44,8 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>PyFarmaceutica.Reportes.entidades</rd:DataSetName>
-        <rd:TableName>ReporteCantidadVentas_Suministro</rd:TableName>
-        <rd:ObjectDataSourceType>PyFarmaceutica.Reportes.entidades.ReporteCantidadVentas_Suministro, PyFarmaceutica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+        <rd:TableName>Stock</rd:TableName>
+        <rd:ObjectDataSourceType>PyFarmaceutica.Reportes.entidades.Stock, PyFarmaceutica, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>
@@ -45,23 +53,64 @@
     <ReportSection>
       <Body>
         <ReportItems>
-          <Tablix Name="Tablix2">
+          <Tablix Name="Tablix1">
             <TablixBody>
               <TablixColumns>
                 <TablixColumn>
-                  <Width>5.87696cm</Width>
+                  <Width>5.77027cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.60696cm</Width>
+                  <Width>5.83377cm</Width>
                 </TablixColumn>
                 <TablixColumn>
-                  <Width>4.45879cm</Width>
+                  <Width>1.91088cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.91793cm</Width>
+                </TablixColumn>
+                <TablixColumn>
+                  <Width>1.91793cm</Width>
                 </TablixColumn>
               </TablixColumns>
               <TablixRows>
                 <TablixRow>
                   <Height>0.6cm</Height>
                   <TablixCells>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox1">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Suministro</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox1</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
                     <TablixCell>
                       <CellContents>
                         <Textbox Name="Textbox5">
@@ -71,7 +120,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Suministro</Value>
+                                  <Value>Descripcion</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -99,6 +148,41 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
+                        <Textbox Name="Textbox12">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>Stock Minimo</Value>
+                                  <Style>
+                                    <FontWeight>Bold</FontWeight>
+                                  </Style>
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox12</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <BackgroundColor>CornflowerBlue</BackgroundColor>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
                         <Textbox Name="Textbox7">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
@@ -106,7 +190,7 @@
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Cantidad</Value>
+                                  <Value>Stock Disponible</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -134,14 +218,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Textbox9">
+                        <Textbox Name="Textbox10">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>Monto</Value>
+                                  <Value>Diferencia</Value>
                                   <Style>
                                     <FontWeight>Bold</FontWeight>
                                   </Style>
@@ -152,7 +236,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Textbox9</rd:DefaultName>
+                          <rd:DefaultName>Textbox10</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -206,14 +290,14 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Cantidad">
+                        <Textbox Name="Descripcion">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Cantidad.Value</Value>
+                                  <Value>=Fields!Descripcion.Value</Value>
                                   <Style />
                                 </TextRun>
                               </TextRuns>
@@ -222,7 +306,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Cantidad</rd:DefaultName>
+                          <rd:DefaultName>Descripcion</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -238,17 +322,15 @@
                     </TablixCell>
                     <TablixCell>
                       <CellContents>
-                        <Textbox Name="Monto">
+                        <Textbox Name="StockMinimo">
                           <CanGrow>true</CanGrow>
                           <KeepTogether>true</KeepTogether>
                           <Paragraphs>
                             <Paragraph>
                               <TextRuns>
                                 <TextRun>
-                                  <Value>=Fields!Monto.Value</Value>
-                                  <Style>
-                                    <Format>0.00 '$';(0.00 '$')</Format>
-                                  </Style>
+                                  <Value>=Fields!StockMinimo.Value</Value>
+                                  <Style />
                                 </TextRun>
                               </TextRuns>
                               <Style>
@@ -256,7 +338,7 @@
                               </Style>
                             </Paragraph>
                           </Paragraphs>
-                          <rd:DefaultName>Monto</rd:DefaultName>
+                          <rd:DefaultName>StockMinimo</rd:DefaultName>
                           <Style>
                             <Border>
                               <Color>LightGrey</Color>
@@ -266,7 +348,70 @@
                             <PaddingRight>2pt</PaddingRight>
                             <PaddingTop>2pt</PaddingTop>
                             <PaddingBottom>2pt</PaddingBottom>
-                            <rd:FormatSymbolCulture>es-AR</rd:FormatSymbolCulture>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="StockDisponible">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=Fields!StockDisponible.Value</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>StockDisponible</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
+                          </Style>
+                        </Textbox>
+                      </CellContents>
+                    </TablixCell>
+                    <TablixCell>
+                      <CellContents>
+                        <Textbox Name="Textbox11">
+                          <CanGrow>true</CanGrow>
+                          <KeepTogether>true</KeepTogether>
+                          <Paragraphs>
+                            <Paragraph>
+                              <TextRuns>
+                                <TextRun>
+                                  <Value>=(Fields!StockDisponible.Value)-(Fields!StockMinimo.Value)</Value>
+                                  <Style />
+                                </TextRun>
+                              </TextRuns>
+                              <Style>
+                                <TextAlign>Center</TextAlign>
+                              </Style>
+                            </Paragraph>
+                          </Paragraphs>
+                          <rd:DefaultName>Textbox11</rd:DefaultName>
+                          <Style>
+                            <Border>
+                              <Color>LightGrey</Color>
+                              <Style>Solid</Style>
+                            </Border>
+                            <PaddingLeft>2pt</PaddingLeft>
+                            <PaddingRight>2pt</PaddingRight>
+                            <PaddingTop>2pt</PaddingTop>
+                            <PaddingBottom>2pt</PaddingBottom>
                           </Style>
                         </Textbox>
                       </CellContents>
@@ -280,6 +425,8 @@
                 <TablixMember />
                 <TablixMember />
                 <TablixMember />
+                <TablixMember />
+                <TablixMember />
               </TablixMembers>
             </TablixColumnHierarchy>
             <TablixRowHierarchy>
@@ -289,98 +436,30 @@
                 </TablixMember>
                 <TablixMember>
                   <Group Name="Detalles" />
+                  <SortExpressions>
+                    <SortExpression>
+                      <Value>=Fields!StockDisponible.Value-Fields!StockMinimo.Value</Value>
+                    </SortExpression>
+                  </SortExpressions>
                 </TablixMember>
               </TablixMembers>
             </TablixRowHierarchy>
-            <DataSetName>DataSetCantidadVentas_Suministros</DataSetName>
-            <SortExpressions>
-              <SortExpression>
-                <Value>=Fields!Cantidad.Value</Value>
-                <Direction>Descending</Direction>
-              </SortExpression>
-            </SortExpressions>
-            <Top>13.26303cm</Top>
-            <Left>1.54881cm</Left>
+            <DataSetName>DataSetStock</DataSetName>
+            <Top>14.08103cm</Top>
+            <Left>0.32461cm</Left>
             <Height>1.2cm</Height>
-            <Width>14.94271cm</Width>
+            <Width>17.35078cm</Width>
             <Style>
               <Border>
                 <Style>None</Style>
               </Border>
             </Style>
           </Tablix>
-          <Textbox Name="Textbox18">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>DETALLES</Value>
-                    <Style>
-                      <FontSize>12pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox16</rd:DefaultName>
-            <Top>12.30609cm</Top>
-            <Left>7.42576cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.5cm</Width>
-            <ZIndex>1</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox19">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>CANTIDAD TOTAL:</Value>
-                    <Style>
-                      <FontSize>14pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <Color>Blue</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>14.80347cm</Top>
-            <Left>1.54881cm</Left>
-            <Height>0.6cm</Height>
-            <Width>5.14584cm</Width>
-            <ZIndex>2</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Chart Name="Chart3">
+          <Chart Name="Chart1">
             <ChartCategoryHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Group Name="Chart3_CategoryGroup">
+                  <Group Name="Chart1_CategoryGroup">
                     <GroupExpressions>
                       <GroupExpression>=Fields!Suministro.Value</GroupExpression>
                     </GroupExpressions>
@@ -397,25 +476,62 @@
             <ChartSeriesHierarchy>
               <ChartMembers>
                 <ChartMember>
-                  <Label>Cantidad</Label>
+                  <Label>Stock Disponible</Label>
+                </ChartMember>
+                <ChartMember>
+                  <Label>Stock Minimo</Label>
                 </ChartMember>
               </ChartMembers>
             </ChartSeriesHierarchy>
             <ChartData>
               <ChartSeriesCollection>
-                <ChartSeries Name="Cantidad">
+                <ChartSeries Name="StockDisponible">
                   <ChartDataPoints>
                     <ChartDataPoint>
                       <ChartDataPointValues>
-                        <Y>=Sum(Fields!Cantidad.Value)</Y>
+                        <Y>=Sum(Fields!StockDisponible.Value)</Y>
                       </ChartDataPointValues>
                       <ChartDataLabel>
                         <Style />
                       </ChartDataLabel>
                       <Style>
-                        <Color>SlateBlue</Color>
-                        <BackgroundGradientType>None</BackgroundGradientType>
-                        <BackgroundHatchType>None</BackgroundHatchType>
+                        <Color>Black</Color>
+                      </Style>
+                      <ChartMarker>
+                        <Style />
+                      </ChartMarker>
+                      <DataElementOutput>Output</DataElementOutput>
+                    </ChartDataPoint>
+                  </ChartDataPoints>
+                  <Type>Bar</Type>
+                  <Style />
+                  <ChartEmptyPoints>
+                    <Style />
+                    <ChartMarker>
+                      <Style />
+                    </ChartMarker>
+                    <ChartDataLabel>
+                      <Style />
+                    </ChartDataLabel>
+                  </ChartEmptyPoints>
+                  <ValueAxisName>Primary</ValueAxisName>
+                  <CategoryAxisName>Primary</CategoryAxisName>
+                  <ChartSmartLabel>
+                    <CalloutLineColor>Black</CalloutLineColor>
+                    <MinMovingDistance>0pt</MinMovingDistance>
+                  </ChartSmartLabel>
+                </ChartSeries>
+                <ChartSeries Name="StockMinimo">
+                  <ChartDataPoints>
+                    <ChartDataPoint>
+                      <ChartDataPointValues>
+                        <Y>=Sum(Fields!StockMinimo.Value)</Y>
+                      </ChartDataPointValues>
+                      <ChartDataLabel>
+                        <Style />
+                      </ChartDataLabel>
+                      <Style>
+                        <Color>Red</Color>
                       </Style>
                       <ChartMarker>
                         <Style />
@@ -560,7 +676,6 @@
                 </ChartCategoryAxes>
                 <ChartValueAxes>
                   <ChartAxis Name="Primary">
-                    <Visible>False</Visible>
                     <Style>
                       <Border>
                         <Color>Gainsboro</Color>
@@ -573,10 +688,10 @@
                       <Caption />
                       <Style>
                         <FontSize>9pt</FontSize>
-                        <Color>#5c5c5c</Color>
                       </Style>
                     </ChartAxisTitle>
                     <ChartMajorGridLines>
+                      <Enabled>False</Enabled>
                       <Style>
                         <Border>
                           <Color>Gainsboro</Color>
@@ -610,6 +725,7 @@
                     <CrossAt>NaN</CrossAt>
                     <Minimum>NaN</Minimum>
                     <Maximum>NaN</Maximum>
+                    <HideLabels>true</HideLabels>
                     <ChartAxisScaleBreak>
                       <Style />
                     </ChartAxisScaleBreak>
@@ -712,10 +828,10 @@
                 <VerticalAlign>Top</VerticalAlign>
               </Style>
             </ChartNoDataMessage>
-            <DataSetName>DataSetCantidadVentas_Suministros</DataSetName>
-            <Height>10.99017cm</Height>
+            <DataSetName>DataSetStock</DataSetName>
+            <Height>12.60404cm</Height>
             <Width>18cm</Width>
-            <ZIndex>3</ZIndex>
+            <ZIndex>1</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -734,50 +850,16 @@
               <BackgroundGradientType>None</BackgroundGradientType>
             </Style>
           </Chart>
-          <Textbox Name="Textbox20">
+          <Textbox Name="Textbox16">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
             <Paragraphs>
               <Paragraph>
                 <TextRuns>
                   <TextRun>
-                    <Value>MONTO TOTAL:</Value>
+                    <Value>DETALLES</Value>
                     <Style>
-                      <FontSize>14pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                      <Color>Blue</Color>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>15.54458cm</Top>
-            <Left>1.54881cm</Left>
-            <Height>0.6cm</Height>
-            <Width>4.57434cm</Width>
-            <ZIndex>4</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox21">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Sum(Fields!Cantidad.Value, "DataSetCantidadVentas_Suministros")</Value>
-                    <Style>
-                      <FontSize>14pt</FontSize>
+                      <FontSize>12pt</FontSize>
                       <FontWeight>Bold</FontWeight>
                     </Style>
                   </TextRun>
@@ -785,45 +867,12 @@
                 <Style />
               </Paragraph>
             </Paragraphs>
-            <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>14.80347cm</Top>
-            <Left>6.69464cm</Left>
+            <rd:DefaultName>Textbox16</rd:DefaultName>
+            <Top>13.04267cm</Top>
+            <Left>7.41133cm</Left>
             <Height>0.6cm</Height>
-            <Width>2.33067cm</Width>
-            <ZIndex>5</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox22">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>=Sum(Fields!Monto.Value, "DataSetCantidadVentas_Suministros")</Value>
-                    <Style>
-                      <FontSize>14pt</FontSize>
-                      <FontWeight>Bold</FontWeight>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style />
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox18</rd:DefaultName>
-            <Top>15.54458cm</Top>
-            <Left>6.69464cm</Left>
-            <Height>0.6cm</Height>
-            <Width>2.33067cm</Width>
-            <ZIndex>6</ZIndex>
+            <Width>2.5cm</Width>
+            <ZIndex>2</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -866,8 +915,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox7</rd:DefaultName>
-              <Top>0.38128cm</Top>
-              <Left>10.77683cm</Left>
+              <Top>0.36697cm</Top>
+              <Left>10.75156cm</Left>
               <Height>0.6cm</Height>
               <Width>6.92383cm</Width>
               <Style>
@@ -898,8 +947,8 @@
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox1</rd:DefaultName>
-              <Top>1.19239cm</Top>
-              <Left>6.03551cm</Left>
+              <Top>1.17808cm</Top>
+              <Left>6.01024cm</Left>
               <Height>1.21384cm</Height>
               <Width>5.33633cm</Width>
               <ZIndex>1</ZIndex>
@@ -920,18 +969,20 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>Cantidad total de insumos vendidos desde inicio de actividad</Value>
+                      <Value>Stocks</Value>
                       <Style>
                         <Color>White</Color>
                       </Style>
                     </TextRun>
                   </TextRuns>
-                  <Style />
+                  <Style>
+                    <TextAlign>Center</TextAlign>
+                  </Style>
                 </Paragraph>
               </Paragraphs>
               <rd:DefaultName>Textbox2</rd:DefaultName>
-              <Top>2.58262cm</Top>
-              <Left>4.02467cm</Left>
+              <Top>2.56831cm</Top>
+              <Left>3.9994cm</Left>
               <Height>0.49417cm</Height>
               <Width>9.71078cm</Width>
               <ZIndex>2</ZIndex>
@@ -946,8 +997,8 @@
               </Style>
             </Textbox>
             <Line Name="Line1">
-              <Top>3.14734cm</Top>
-              <Left>4.02467cm</Left>
+              <Top>3.13303cm</Top>
+              <Left>3.9994cm</Left>
               <Height>0cm</Height>
               <Width>9.71078cm</Width>
               <ZIndex>3</ZIndex>
@@ -962,8 +1013,8 @@
               <Source>Embedded</Source>
               <Value>WhatsAppImage20211021at121937</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.38128cm</Top>
-              <Left>0.34988cm</Left>
+              <Top>0.36697cm</Top>
+              <Left>0.32461cm</Left>
               <Height>1.41533cm</Height>
               <Width>1.6905cm</Width>
               <ZIndex>4</ZIndex>
@@ -977,8 +1028,8 @@
               <Source>Embedded</Source>
               <Value>FARMAPLUS41</Value>
               <Sizing>FitProportional</Sizing>
-              <Top>0.63528cm</Top>
-              <Left>2.07565cm</Left>
+              <Top>0.62097cm</Top>
+              <Left>2.05038cm</Left>
               <Height>0.67422cm</Height>
               <Width>3.27801cm</Width>
               <ZIndex>5</ZIndex>
@@ -997,7 +1048,7 @@
           </Style>
         </PageHeader>
         <PageFooter>
-          <Height>1cm</Height>
+          <Height>2cm</Height>
           <PrintOnFirstPage>true</PrintOnFirstPage>
           <PrintOnLastPage>true</PrintOnLastPage>
           <Style>
@@ -1007,8 +1058,8 @@
             <BackgroundColor>Black</BackgroundColor>
           </Style>
         </PageFooter>
-        <PageHeight>25.5cm</PageHeight>
-        <PageWidth>18cm</PageWidth>
+        <PageHeight>29.7cm</PageHeight>
+        <PageWidth>21cm</PageWidth>
         <LeftMargin>0cm</LeftMargin>
         <RightMargin>0cm</RightMargin>
         <TopMargin>0cm</TopMargin>
@@ -1154,5 +1205,5 @@ yW5oaGhoaGhoaGhoaGho6Amtk93Q0NDQ0NDQ0NDQ0NDQ0BNaJ7uhoaGhoaGhoaGhoaGhoSe0TnZDQ0ND
     </EmbeddedImage>
   </EmbeddedImages>
   <rd:ReportUnitType>Cm</rd:ReportUnitType>
-  <rd:ReportID>ef5701bd-6be4-48cf-ad20-42d4bce89042</rd:ReportID>
+  <rd:ReportID>576aefe7-4cfc-4611-9708-74369a096698</rd:ReportID>
 </Report>

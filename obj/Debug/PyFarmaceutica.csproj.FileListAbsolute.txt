@@ -141,3 +141,4 @@ C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.Reportes
 C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.Presentacion.FormAcercaDe.resources
 C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.Presentacion.Login_Sign_Up.asa.resources
 C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.FormLogin.resources
+C:\Users\Cristhian\source\repos\PyFarmaceutica\obj\Debug\PyFarmaceutica.Reportes.FormReportes.FormReporteStock.resources

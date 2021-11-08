@@ -31,6 +31,11 @@ namespace PyFarmaceutica.Presentacion
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSuministro));
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties5 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties6 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties7 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
+            Bunifu.UI.WinForms.BunifuTextBox.StateProperties stateProperties8 = new Bunifu.UI.WinForms.BunifuTextBox.StateProperties();
             this.label1 = new System.Windows.Forms.Label();
             this.txtCodigo = new System.Windows.Forms.TextBox();
             this.cboTipo = new System.Windows.Forms.ComboBox();
@@ -47,7 +52,6 @@ namespace PyFarmaceutica.Presentacion
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnAgregar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnGuardarCambios = new System.Windows.Forms.Button();
             this.dgvSuministros = new System.Windows.Forms.DataGridView();
             this.ColumnaId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,169 +63,193 @@ namespace PyFarmaceutica.Presentacion
             this.ColumnaPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnaEditar = new System.Windows.Forms.DataGridViewButtonColumn();
             this.ColumnaBorrar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.groupBox1.SuspendLayout();
+            this.lblFiltrar = new System.Windows.Forms.Label();
+            this.txtFiltro = new Bunifu.UI.WinForms.BunifuTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuministros)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.White;
-            this.label1.Font = new System.Drawing.Font("Arial", 16.2F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(7, 9);
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Segoe UI Semibold", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(10, 9);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(212, 33);
+            this.label1.Size = new System.Drawing.Size(198, 38);
             this.label1.TabIndex = 0;
             this.label1.Text = "SUMINISTROS";
             // 
             // txtCodigo
             // 
-            this.txtCodigo.Location = new System.Drawing.Point(91, 71);
+            this.txtCodigo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtCodigo.Location = new System.Drawing.Point(137, 58);
             this.txtCodigo.Margin = new System.Windows.Forms.Padding(4);
             this.txtCodigo.Name = "txtCodigo";
-            this.txtCodigo.Size = new System.Drawing.Size(147, 25);
+            this.txtCodigo.Size = new System.Drawing.Size(147, 34);
             this.txtCodigo.TabIndex = 1;
             this.txtCodigo.TextChanged += new System.EventHandler(this.txtCodigo_TextChanged);
             // 
             // cboTipo
             // 
+            this.cboTipo.BackColor = System.Drawing.SystemColors.GrayText;
             this.cboTipo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboTipo.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboTipo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboTipo.FormattingEnabled = true;
-            this.cboTipo.Location = new System.Drawing.Point(318, 71);
+            this.cboTipo.Location = new System.Drawing.Point(381, 57);
             this.cboTipo.Margin = new System.Windows.Forms.Padding(4);
             this.cboTipo.Name = "cboTipo";
-            this.cboTipo.Size = new System.Drawing.Size(187, 25);
+            this.cboTipo.Size = new System.Drawing.Size(187, 36);
             this.cboTipo.TabIndex = 2;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(15, 71);
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(15, 60);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 20);
+            this.label2.Size = new System.Drawing.Size(77, 28);
             this.label2.TabIndex = 4;
             this.label2.Text = "Código";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(15, 113);
+            this.label3.BackColor = System.Drawing.Color.Transparent;
+            this.label3.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.White;
+            this.label3.Location = new System.Drawing.Point(12, 102);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(87, 20);
+            this.label3.Size = new System.Drawing.Size(110, 28);
             this.label3.TabIndex = 5;
             this.label3.Text = "Suministro";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(861, 72);
+            this.label4.BackColor = System.Drawing.Color.Transparent;
+            this.label4.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.White;
+            this.label4.Location = new System.Drawing.Point(858, 61);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(92, 20);
+            this.label4.Size = new System.Drawing.Size(115, 28);
             this.label4.TabIndex = 6;
             this.label4.Text = "Venta Libre";
             // 
             // rbtYes
             // 
             this.rbtYes.AutoSize = true;
-            this.rbtYes.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtYes.Location = new System.Drawing.Point(991, 70);
+            this.rbtYes.BackColor = System.Drawing.Color.Transparent;
+            this.rbtYes.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtYes.ForeColor = System.Drawing.Color.White;
+            this.rbtYes.Location = new System.Drawing.Point(988, 59);
             this.rbtYes.Margin = new System.Windows.Forms.Padding(4);
             this.rbtYes.Name = "rbtYes";
-            this.rbtYes.Size = new System.Drawing.Size(43, 24);
+            this.rbtYes.Size = new System.Drawing.Size(49, 32);
             this.rbtYes.TabIndex = 7;
             this.rbtYes.TabStop = true;
             this.rbtYes.Text = "Si";
-            this.rbtYes.UseVisualStyleBackColor = true;
+            this.rbtYes.UseVisualStyleBackColor = false;
             // 
             // rbtNo
             // 
             this.rbtNo.AutoSize = true;
-            this.rbtNo.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbtNo.Location = new System.Drawing.Point(991, 102);
+            this.rbtNo.BackColor = System.Drawing.Color.Transparent;
+            this.rbtNo.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbtNo.ForeColor = System.Drawing.Color.White;
+            this.rbtNo.Location = new System.Drawing.Point(988, 91);
             this.rbtNo.Margin = new System.Windows.Forms.Padding(4);
             this.rbtNo.Name = "rbtNo";
-            this.rbtNo.Size = new System.Drawing.Size(52, 24);
+            this.rbtNo.Size = new System.Drawing.Size(60, 32);
             this.rbtNo.TabIndex = 8;
             this.rbtNo.TabStop = true;
             this.rbtNo.Text = "No";
-            this.rbtNo.UseVisualStyleBackColor = true;
+            this.rbtNo.UseVisualStyleBackColor = false;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(268, 71);
+            this.label5.BackColor = System.Drawing.Color.Transparent;
+            this.label5.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(309, 61);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(42, 20);
+            this.label5.Size = new System.Drawing.Size(52, 28);
             this.label5.TabIndex = 9;
             this.label5.Text = "Tipo";
             // 
             // txtSuministro
             // 
-            this.txtSuministro.Location = new System.Drawing.Point(118, 112);
+            this.txtSuministro.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtSuministro.Location = new System.Drawing.Point(137, 99);
             this.txtSuministro.Margin = new System.Windows.Forms.Padding(4);
             this.txtSuministro.Name = "txtSuministro";
-            this.txtSuministro.Size = new System.Drawing.Size(431, 25);
+            this.txtSuministro.Size = new System.Drawing.Size(431, 34);
             this.txtSuministro.TabIndex = 10;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(599, 71);
+            this.label6.BackColor = System.Drawing.Color.Transparent;
+            this.label6.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.White;
+            this.label6.Location = new System.Drawing.Point(596, 60);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(55, 20);
+            this.label6.Size = new System.Drawing.Size(68, 28);
             this.label6.TabIndex = 11;
             this.label6.Text = "Precio";
             // 
             // txtPrecio
             // 
-            this.txtPrecio.Location = new System.Drawing.Point(662, 71);
+            this.txtPrecio.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrecio.Location = new System.Drawing.Point(672, 57);
             this.txtPrecio.Margin = new System.Windows.Forms.Padding(4);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(130, 25);
+            this.txtPrecio.Size = new System.Drawing.Size(130, 34);
             this.txtPrecio.TabIndex = 12;
             this.txtPrecio.TextChanged += new System.EventHandler(this.txtPrecio_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(15, 155);
+            this.label7.BackColor = System.Drawing.Color.Transparent;
+            this.label7.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.White;
+            this.label7.Location = new System.Drawing.Point(12, 144);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(95, 20);
+            this.label7.Size = new System.Drawing.Size(117, 28);
             this.label7.TabIndex = 13;
             this.label7.Text = "Descripción";
             // 
             // txtDescripcion
             // 
-            this.txtDescripcion.Location = new System.Drawing.Point(118, 154);
+            this.txtDescripcion.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDescripcion.Location = new System.Drawing.Point(137, 141);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.Size = new System.Drawing.Size(431, 25);
+            this.txtDescripcion.Size = new System.Drawing.Size(431, 34);
             this.txtDescripcion.TabIndex = 14;
             // 
             // btnAgregar
             // 
-            this.btnAgregar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnAgregar.BackColor = System.Drawing.Color.DimGray;
+            this.btnAgregar.FlatAppearance.BorderSize = 0;
             this.btnAgregar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAgregar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregar.ForeColor = System.Drawing.Color.White;
-            this.btnAgregar.Location = new System.Drawing.Point(13, 187);
+            this.btnAgregar.Location = new System.Drawing.Point(20, 207);
             this.btnAgregar.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgregar.Name = "btnAgregar";
-            this.btnAgregar.Size = new System.Drawing.Size(110, 43);
+            this.btnAgregar.Size = new System.Drawing.Size(150, 43);
             this.btnAgregar.TabIndex = 16;
             this.btnAgregar.Text = "Agregar";
             this.btnAgregar.UseVisualStyleBackColor = false;
@@ -230,57 +258,30 @@ namespace PyFarmaceutica.Presentacion
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Red;
+            this.btnCancelar.FlatAppearance.BorderSize = 0;
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.ForeColor = System.Drawing.Color.White;
-            this.btnCancelar.Location = new System.Drawing.Point(968, 196);
+            this.btnCancelar.Location = new System.Drawing.Point(921, 207);
             this.btnCancelar.Margin = new System.Windows.Forms.Padding(4);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(111, 43);
+            this.btnCancelar.Size = new System.Drawing.Size(150, 43);
             this.btnCancelar.TabIndex = 17;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
-            // groupBox1
-            // 
-            this.groupBox1.BackColor = System.Drawing.Color.White;
-            this.groupBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.groupBox1.Controls.Add(this.btnCancelar);
-            this.groupBox1.Controls.Add(this.txtCodigo);
-            this.groupBox1.Controls.Add(this.btnGuardarCambios);
-            this.groupBox1.Controls.Add(this.txtSuministro);
-            this.groupBox1.Controls.Add(this.txtDescripcion);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.label7);
-            this.groupBox1.Controls.Add(this.txtPrecio);
-            this.groupBox1.Controls.Add(this.cboTipo);
-            this.groupBox1.Controls.Add(this.rbtYes);
-            this.groupBox1.Controls.Add(this.rbtNo);
-            this.groupBox1.Controls.Add(this.label5);
-            this.groupBox1.Controls.Add(this.label6);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.ForeColor = System.Drawing.Color.Black;
-            this.groupBox1.Location = new System.Drawing.Point(-2, -9);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(1091, 256);
-            this.groupBox1.TabIndex = 18;
-            this.groupBox1.TabStop = false;
-            // 
             // btnGuardarCambios
             // 
-            this.btnGuardarCambios.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.btnGuardarCambios.BackColor = System.Drawing.Color.DimGray;
+            this.btnGuardarCambios.FlatAppearance.BorderSize = 0;
             this.btnGuardarCambios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnGuardarCambios.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGuardarCambios.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnGuardarCambios.ForeColor = System.Drawing.Color.White;
-            this.btnGuardarCambios.Location = new System.Drawing.Point(770, 196);
+            this.btnGuardarCambios.Location = new System.Drawing.Point(761, 207);
             this.btnGuardarCambios.Margin = new System.Windows.Forms.Padding(4);
             this.btnGuardarCambios.Name = "btnGuardarCambios";
-            this.btnGuardarCambios.Size = new System.Drawing.Size(168, 43);
+            this.btnGuardarCambios.Size = new System.Drawing.Size(150, 43);
             this.btnGuardarCambios.TabIndex = 22;
             this.btnGuardarCambios.Text = "Guardar Cambios";
             this.btnGuardarCambios.UseVisualStyleBackColor = false;
@@ -290,6 +291,7 @@ namespace PyFarmaceutica.Presentacion
             // 
             this.dgvSuministros.AllowUserToAddRows = false;
             this.dgvSuministros.AllowUserToDeleteRows = false;
+            this.dgvSuministros.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgvSuministros.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Highlight;
@@ -311,7 +313,7 @@ namespace PyFarmaceutica.Presentacion
             this.ColumnaEditar,
             this.ColumnaBorrar});
             this.dgvSuministros.EnableHeadersVisualStyles = false;
-            this.dgvSuministros.Location = new System.Drawing.Point(13, 247);
+            this.dgvSuministros.Location = new System.Drawing.Point(20, 383);
             this.dgvSuministros.Name = "dgvSuministros";
             this.dgvSuministros.ReadOnly = true;
             this.dgvSuministros.RowHeadersVisible = false;
@@ -323,7 +325,7 @@ namespace PyFarmaceutica.Presentacion
             this.dgvSuministros.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvSuministros.RowTemplate.Height = 24;
             this.dgvSuministros.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSuministros.Size = new System.Drawing.Size(1064, 521);
+            this.dgvSuministros.Size = new System.Drawing.Size(1051, 385);
             this.dgvSuministros.TabIndex = 21;
             this.dgvSuministros.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSuministros_CellContentClick_1);
             // 
@@ -333,7 +335,7 @@ namespace PyFarmaceutica.Presentacion
             this.ColumnaId.MinimumWidth = 6;
             this.ColumnaId.Name = "ColumnaId";
             this.ColumnaId.ReadOnly = true;
-            this.ColumnaId.Width = 35;
+            this.ColumnaId.Width = 49;
             // 
             // ColumnaNombre
             // 
@@ -341,7 +343,7 @@ namespace PyFarmaceutica.Presentacion
             this.ColumnaNombre.MinimumWidth = 6;
             this.ColumnaNombre.Name = "ColumnaNombre";
             this.ColumnaNombre.ReadOnly = true;
-            this.ColumnaNombre.Width = 180;
+            this.ColumnaNombre.Width = 90;
             // 
             // ColumnaIdTipoSuministro
             // 
@@ -358,7 +360,7 @@ namespace PyFarmaceutica.Presentacion
             this.ColumnaNombreTipoSuministro.MinimumWidth = 6;
             this.ColumnaNombreTipoSuministro.Name = "ColumnaNombreTipoSuministro";
             this.ColumnaNombreTipoSuministro.ReadOnly = true;
-            this.ColumnaNombreTipoSuministro.Width = 110;
+            this.ColumnaNombreTipoSuministro.Width = 132;
             // 
             // ColumnaDescripcion
             // 
@@ -366,7 +368,7 @@ namespace PyFarmaceutica.Presentacion
             this.ColumnaDescripcion.MinimumWidth = 6;
             this.ColumnaDescripcion.Name = "ColumnaDescripcion";
             this.ColumnaDescripcion.ReadOnly = true;
-            this.ColumnaDescripcion.Width = 220;
+            this.ColumnaDescripcion.Width = 119;
             // 
             // ColumnaVentaLibre
             // 
@@ -374,7 +376,7 @@ namespace PyFarmaceutica.Presentacion
             this.ColumnaVentaLibre.MinimumWidth = 6;
             this.ColumnaVentaLibre.Name = "ColumnaVentaLibre";
             this.ColumnaVentaLibre.ReadOnly = true;
-            this.ColumnaVentaLibre.Width = 50;
+            this.ColumnaVentaLibre.Width = 105;
             // 
             // ColumnaPrecio
             // 
@@ -382,7 +384,7 @@ namespace PyFarmaceutica.Presentacion
             this.ColumnaPrecio.MinimumWidth = 6;
             this.ColumnaPrecio.Name = "ColumnaPrecio";
             this.ColumnaPrecio.ReadOnly = true;
-            this.ColumnaPrecio.Width = 60;
+            this.ColumnaPrecio.Width = 80;
             // 
             // ColumnaEditar
             // 
@@ -394,7 +396,7 @@ namespace PyFarmaceutica.Presentacion
             this.ColumnaEditar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnaEditar.Text = "Editar";
             this.ColumnaEditar.UseColumnTextForButtonValue = true;
-            this.ColumnaEditar.Width = 60;
+            this.ColumnaEditar.Width = 76;
             // 
             // ColumnaBorrar
             // 
@@ -406,25 +408,126 @@ namespace PyFarmaceutica.Presentacion
             this.ColumnaBorrar.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.ColumnaBorrar.Text = "Borrar";
             this.ColumnaBorrar.UseColumnTextForButtonValue = true;
-            this.ColumnaBorrar.Width = 60;
+            this.ColumnaBorrar.Width = 80;
+            // 
+            // lblFiltrar
+            // 
+            this.lblFiltrar.AutoSize = true;
+            this.lblFiltrar.Font = new System.Drawing.Font("Arial", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblFiltrar.Location = new System.Drawing.Point(17, 289);
+            this.lblFiltrar.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.lblFiltrar.Name = "lblFiltrar";
+            this.lblFiltrar.Size = new System.Drawing.Size(138, 18);
+            this.lblFiltrar.TabIndex = 23;
+            this.lblFiltrar.Text = "Buscar Suministro";
+            // 
+            // txtFiltro
+            // 
+            this.txtFiltro.AcceptsReturn = false;
+            this.txtFiltro.AcceptsTab = false;
+            this.txtFiltro.AnimationSpeed = 200;
+            this.txtFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.txtFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.txtFiltro.BackColor = System.Drawing.Color.Transparent;
+            this.txtFiltro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("txtFiltro.BackgroundImage")));
+            this.txtFiltro.BorderColorActive = System.Drawing.Color.DodgerBlue;
+            this.txtFiltro.BorderColorDisabled = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            this.txtFiltro.BorderColorHover = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            this.txtFiltro.BorderColorIdle = System.Drawing.Color.Silver;
+            this.txtFiltro.BorderRadius = 1;
+            this.txtFiltro.BorderThickness = 1;
+            this.txtFiltro.CharacterCasing = System.Windows.Forms.CharacterCasing.Normal;
+            this.txtFiltro.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFiltro.DefaultFont = new System.Drawing.Font("Segoe UI", 9.25F);
+            this.txtFiltro.DefaultText = "";
+            this.txtFiltro.FillColor = System.Drawing.Color.White;
+            this.txtFiltro.HideSelection = true;
+            this.txtFiltro.IconLeft = null;
+            this.txtFiltro.IconLeftCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFiltro.IconPadding = 10;
+            this.txtFiltro.IconRight = null;
+            this.txtFiltro.IconRightCursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtFiltro.Lines = new string[0];
+            this.txtFiltro.Location = new System.Drawing.Point(20, 320);
+            this.txtFiltro.MaxLength = 32767;
+            this.txtFiltro.MinimumSize = new System.Drawing.Size(1, 1);
+            this.txtFiltro.Modified = false;
+            this.txtFiltro.Multiline = false;
+            this.txtFiltro.Name = "txtFiltro";
+            stateProperties5.BorderColor = System.Drawing.Color.DodgerBlue;
+            stateProperties5.FillColor = System.Drawing.Color.Empty;
+            stateProperties5.ForeColor = System.Drawing.Color.Empty;
+            stateProperties5.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtFiltro.OnActiveState = stateProperties5;
+            stateProperties6.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(204)))), ((int)(((byte)(204)))), ((int)(((byte)(204)))));
+            stateProperties6.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            stateProperties6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(109)))), ((int)(((byte)(109)))), ((int)(((byte)(109)))));
+            stateProperties6.PlaceholderForeColor = System.Drawing.Color.DarkGray;
+            this.txtFiltro.OnDisabledState = stateProperties6;
+            stateProperties7.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(181)))), ((int)(((byte)(255)))));
+            stateProperties7.FillColor = System.Drawing.Color.Empty;
+            stateProperties7.ForeColor = System.Drawing.Color.Empty;
+            stateProperties7.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtFiltro.OnHoverState = stateProperties7;
+            stateProperties8.BorderColor = System.Drawing.Color.Silver;
+            stateProperties8.FillColor = System.Drawing.Color.White;
+            stateProperties8.ForeColor = System.Drawing.Color.Empty;
+            stateProperties8.PlaceholderForeColor = System.Drawing.Color.Empty;
+            this.txtFiltro.OnIdleState = stateProperties8;
+            this.txtFiltro.Padding = new System.Windows.Forms.Padding(3);
+            this.txtFiltro.PasswordChar = '\0';
+            this.txtFiltro.PlaceholderForeColor = System.Drawing.Color.Silver;
+            this.txtFiltro.PlaceholderText = "Suministro";
+            this.txtFiltro.ReadOnly = false;
+            this.txtFiltro.ScrollBars = System.Windows.Forms.ScrollBars.None;
+            this.txtFiltro.SelectedText = "";
+            this.txtFiltro.SelectionLength = 0;
+            this.txtFiltro.SelectionStart = 0;
+            this.txtFiltro.ShortcutsEnabled = true;
+            this.txtFiltro.Size = new System.Drawing.Size(320, 41);
+            this.txtFiltro.Style = Bunifu.UI.WinForms.BunifuTextBox._Style.Bunifu;
+            this.txtFiltro.TabIndex = 23;
+            this.txtFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txtFiltro.TextMarginBottom = 0;
+            this.txtFiltro.TextMarginLeft = 3;
+            this.txtFiltro.TextMarginTop = 0;
+            this.txtFiltro.TextPlaceholder = "Suministro";
+            this.txtFiltro.UseSystemPasswordChar = false;
+            this.txtFiltro.WordWrap = true;
+            this.txtFiltro.TextChanged += new System.EventHandler(this.txtFiltro_TextChanged_1);
             // 
             // FormSuministro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
+            this.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("$this.BackgroundImage")));
             this.ClientSize = new System.Drawing.Size(1090, 780);
-            this.Controls.Add(this.dgvSuministros);
+            this.Controls.Add(this.btnCancelar);
+            this.Controls.Add(this.txtFiltro);
+            this.Controls.Add(this.txtCodigo);
+            this.Controls.Add(this.btnGuardarCambios);
+            this.Controls.Add(this.lblFiltrar);
             this.Controls.Add(this.btnAgregar);
+            this.Controls.Add(this.txtSuministro);
+            this.Controls.Add(this.dgvSuministros);
+            this.Controls.Add(this.txtDescripcion);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.cboTipo);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.rbtYes);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.rbtNo);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormSuministro";
             this.Text = "frmSuministro";
             this.Load += new System.EventHandler(this.FormSuministro_Load);
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSuministros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -449,7 +552,6 @@ namespace PyFarmaceutica.Presentacion
         private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Button btnAgregar;
         private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvSuministros;
         private System.Windows.Forms.Button btnGuardarCambios;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaId;
@@ -461,5 +563,7 @@ namespace PyFarmaceutica.Presentacion
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnaPrecio;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnaEditar;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnaBorrar;
+        private System.Windows.Forms.Label lblFiltrar;
+        private Bunifu.UI.WinForms.BunifuTextBox txtFiltro;
     }
 }

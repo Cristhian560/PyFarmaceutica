@@ -116,11 +116,6 @@ namespace PyFarmaceutica
         {
             this.Close();
         }
-        private void btnStocks_Click(object sender, EventArgs e)
-        {
-            HideSubMenu();
-        }
-
         private void btnAcercaDe_Click(object sender, EventArgs e)
         {
             HideSubMenu();
@@ -140,6 +135,13 @@ namespace PyFarmaceutica
             HideSubMenu();
             Form form_factura = new FormFactura();
             AbrirForm(form_factura);
+        }
+
+        private void btnStocks_Click_1(object sender, EventArgs e)
+        {
+            HideSubMenu();
+            Form form_stock = new FormReporteStock();
+            AbrirForm(form_stock);
         }
     }
 }

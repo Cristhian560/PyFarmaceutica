@@ -3558,7 +3558,7 @@
         nmJn0TQ0AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuTextBox5.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtContrasenia.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAP0AAAApCAYAAAD+mi/FAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACySURBVHhe7dOxCQMxAARB9V+VHpXhMlyAH4ESt6CdgUsu
@@ -3567,7 +3567,7 @@
         hxjRQ4zoIeYv+ud5vvsws3u3Oz/JAx1jvJD3uk+pWqjWAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuTextBox4.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtUsuarioR.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAP0AAAApCAYAAAD+mi/FAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACySURBVHhe7dOxCQMxAARB9V+VHpXhMlyAH4ESt6CdgUsu
@@ -3576,7 +3576,7 @@
         hxjRQ4zoIeYv+ud5vvsws3u3Oz/JAx1jvJD3uk+pWqjWAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuTextBox3.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtCorreo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAZkAAAApCAYAAADnGFQPAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
         YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAADUSURBVHhe7dUxDQMxAARB80fll2EERgDkZclNem83I11z
@@ -3586,22 +3586,22 @@
         k4ppagD+sAAAAABJRU5ErkJggg==
 </value>
   </data>
-  <data name="bunifuTextBox2.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtApellido.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJAAAAApCAYAAADag6AFAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACgSURBVHhe7dKxCQMxAARB9V+VHpXhMlyAjUCJs39vOgOX
-        XLwDsrXWa875Mbu73czJZ4x9wBO7mZOPgHhOQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREImASAREIiAS
-        AZEIiERAJAIiERCJgEgERCIgEgGRCIhEQCQCIhEQiYBIBEQiIBIBkQiIREAkAiIREMlPQNd1vfdhdne7
-        mZMP/GuML+zMLd5YP+SvAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAMcAAAApCAYAAACBSz00AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACmSURBVHhe7dOxDQIxAARB91+VLZdBGRTwyOIDEFoqmJEu
+        uXwH8Mfe+zHnvMxsXqeHO40xzgG8nR7uNMQBn8QBQRwQxAFBHBDEAUEcEMQBQRwQxAFBHBDEAUEcEMQB
+        QRwQxAFBHBDEAUEcEMQBQRwQxAFBHBDEAUEcEMQBQRwQxAFBHBDEAUEcEMQBQRwQxAFBHBDEAeErjrXW
+        8xxmNq/Tw50G8GuMF2QvQRPc4oJLAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="bunifuTextBox1.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="txtNombre.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAJcAAAApCAYAAAA4X7t8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACjSURBVHhe7dKxDQMhAARB+q+KF2W4DBfgFxKJczabkS65
-        eAek1lqfOefP7MZ2TyetMfYBt+yeTlri4i5xkREXGXGRERcZcZERFxlxkREXGXGRERcZcZERFxlxkREX
-        GXGRERcZcZERFxlxkREXGXGRERcZcZERFxlxkREXGXGRERcZcZERFxlxkREXGXGRERcZcZH5i+t5nu8+
-        zG5s93TSgsIYL3IaY4BpBmHOAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAMAAAAApCAYAAABjlyZNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAACoSURBVHhe7dMxDQQxEARB80dlyzAexgG4kyUnj6GrpE02
+        nh6Qt/f+zTlf5yp3Nn/nP8Z5QMnZ/J2/AOgRAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQ
+        JgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApAmANAGQJgDSBECaAEgTAGkCIE0ApP0F
+        sNZ6zsO5yp3N3/lD1RgfSMILcW8qpZMAAAAASUVORK5CYII=
 </value>
   </data>
 </root>
